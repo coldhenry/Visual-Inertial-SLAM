@@ -1,6 +1,6 @@
 # Color Segmentation and Pattern Detection
-<img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/img2.png" alt="layout" width="200" /><img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/img3.png" alt="layout" width="200" />
-<img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/img5.png" alt="layout" width="200" /><img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/img69.png" alt="layout" width="200" />
+<img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/img2.png" alt="layout" width="200" /><img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/img3.png" alt="layout" width="200" />
+<img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/img5.png" alt="layout" width="200" /><img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/img69.png" alt="layout" width="200" />
 
 
 
@@ -46,12 +46,12 @@ In this project, I will first break down each image of trainset into assigned pi
 
 I choose the Gaussian Naïve Bayes (GNB) method as my model. This method uses a generative model for discrete labels, which are the six categories of colors. The assumption for this method is that, when conditioned on each label, the dimensions of a pixel are independent, which indicates that the color code R, G, and B has an independent relationship. The equations of the model:
 
-|    <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/1.png" alt="layout" width="200" />  |  (1) |
+|    <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/1.png" alt="layout" width="200" />  |  (1) |
 | ---- | ---: |
-|   <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/2.png" alt="layout" width="200" />    |  (2) |
-|   <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/3.png" alt="layout" width="160" />  |  (3) |
+|   <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/2.png" alt="layout" width="200" />    |  (2) |
+|   <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/3.png" alt="layout" width="160" />  |  (3) |
 
-Note that the symbol <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/3_1.png" alt="layout" width="60" />  refers to the value one if the category is k.
+Note that the symbol <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/3_1.png" alt="layout" width="60" />  refers to the value one if the category is k.
 
 To build up the Gaussian model, we need the parameters mean and standard deviation. For the Gaussian Naïve Bayes method, I use the Maximum Likelihood Estimation (MLE) to maximize the likelihood of the trainset given the parameters.
 
@@ -61,41 +61,41 @@ To build up the Gaussian model, we need the parameters mean and standard deviati
 
 After deriving six subsets of the trainset, I derived the prior probabilities of each color by calculating what portion does a particular color category is compared to all pixels. The equations are:
 
-|  <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/4.png" alt="layout" width="160" />    |  (4) |
+|  <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/4.png" alt="layout" width="160" />    |  (4) |
 | :--- | ---: |
-|  <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/5.png" alt="layout" width="200" />     |  (5) |
+|  <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/5.png" alt="layout" width="200" />     |  (5) |
 
 #### B.  Means
 
    Mean of each category is derived by the following equations:
 
-|   <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/6.png" alt="layout" width="200" />    |  (6) |
+|   <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/6.png" alt="layout" width="200" />    |  (6) |
 | ---- | ---: |
 
 #### C. Covariance
 
-|   <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/7.png" alt="layout" width="200" />    |  (7) |
+|   <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/7.png" alt="layout" width="200" />    |  (7) |
 | ---- | ---: |
 
 #### D. The output of the GNB classifier
 
 After obtains the MLE estimates of the priors and the parameters. The classifier could produce the output by giving a category that maximizes the likelihood of a test example as following:
 
-| <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/8.png" alt="layout" width="200" />      |  (8) |
+| <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/8.png" alt="layout" width="200" />      |  (8) |
 | ---- | ---: |
-|  <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/9.png" alt="layout" width="120" />     |  (9) |
+|  <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/9.png" alt="layout" width="120" />     |  (9) |
 
   Or this could also be derived in the log-likelihood form:
 
-|<img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/10.png" alt="layout" width="200" />      | (10) |
+|<img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/10.png" alt="layout" width="200" />      | (10) |
 | ---- | ---: |
-| <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/11.png" alt="layout" width="120" />      | (11) |
+| <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/11.png" alt="layout" width="120" />      | (11) |
 
    Use the classifier to go through each data point, and use the following condition to build up the binary mask:
 
 For each point, 
 
-|  <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/12.png" alt="layout" width="200" />     | (12) |
+|  <img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/12.png" alt="layout" width="200" />     | (12) |
 | ---- | ---: |
 
 The mask contains all shapes that are classified as red. In the next step, we are trying to find out those are stop signs instead of other objects such as red lights or red cars. To filter out these objects, I first need to preprocess the mask to ensure the quality of the mask. In general, most masks would have some defects like small noises, the incomplete shape of the stop sign (e.g. lose one part of it or even split into half). To fix the problem, I have utilized the module openCV to do morphological operations such as opening and closing. After trial and errors, the best number and order of operations I had were:
@@ -135,7 +135,7 @@ Euler number here refers to the Euler characteristic of the region, which is com
 
 ## Results
 
-<img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/PR1/pic/13.png" alt="layout" width="640" />
+<img src="https://github.com/coldhenry/Estimation-and-Sensing-of-Robotics/blob/master/StopSignDetection/pic/13.png" alt="layout" width="640" />
 
 After building the model for color classification and setting up the qualifications for detecting the stop sign and drawing the bounding box, we are now ready for applying the function on the trainset again to see if the initial parameters are working.
 
