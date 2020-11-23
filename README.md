@@ -24,10 +24,7 @@ There are two steps for implementing EKF, including a **prediction** step and an
 
 In this section, I would introduce how Extended Kalman Filter is applied to visual-inertial SLAM. I break down this task into three parts according to the request of the assignment: Localization-only problem, mapping-only problem, and the combination visual-inertial SLAM. 
 
-
-
-/// stay tuned ///
-
+please redirect to the [report](https://github.com/coldhenry/Visual-Inertial-SLAM/blob/master/report.pdf) for more information.
 
 
 ## Results
