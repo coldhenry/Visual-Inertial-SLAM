@@ -1,5 +1,7 @@
 # Visual-Inertial SLAM 
 
+![img](https://github.com/coldhenry/Visual-Inertial-SLAM/blob/master/pic/long-view.gif)
+
 ## Introduction
 
 ### Objective
@@ -32,4 +34,6 @@ In this section, I would introduce how Extended Kalman Filter is applied to visu
 
 There are three datasets which are collected in different routes. In each dataset, we demonstrate three graphs to show the performance of Visual-Inertial SLAM. First graph indicates the difference between the trajectory generated from IMU data and the one that updated with both visual information and IMU poses. Second graph shows the landmarks that captured by the camera and the positions updated by the filter. The third graph presents the covariance of the IMU poses.
 
-  
+![img1](https://github.com/coldhenry/Visual-Inertial-SLAM/blob/master/pic/1.png)
+![img1](https://github.com/coldhenry/Visual-Inertial-SLAM/blob/master/pic/2.png)
+![img1](https://github.com/coldhenry/Visual-Inertial-SLAM/blob/master/pic/3.png)
